@@ -1,4 +1,4 @@
-function Header() {
+const Header = () => {
     return (
         <header>
             <h1>My Website</h1>
@@ -12,7 +12,7 @@ function Header() {
             </nav>
             <hr />
         </header>
-    );
+    )
 }
 
 export default Header
