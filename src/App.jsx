@@ -3,10 +3,19 @@ import Card from './components/Card'
 function App() {
  return (
     <>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+      <Card
+        title="Google"
+        img_src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+        description="The most popular search engine worldwide. Fast, accurate, and powered by cutting-edge AI."
+        url="https://www.google.com"
+      />
+
+      <Card
+        title="DuckDuckGo"
+        img_src="https://duckduckgo.com/assets/logo_homepage.normal.v108.png"
+        description="A privacy-focused search engine that doesn't track you. Simple and effective search results."
+        url="https://duckduckgo.com"
+      />
     </>
 )
 }
