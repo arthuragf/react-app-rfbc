@@ -1,5 +1,14 @@
+import Card from './components/Card'
+
 function App() {
- return <h1>Empty Body</h1>
+ return (
+    <>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+    </>
+)
 }
 
 export default App
