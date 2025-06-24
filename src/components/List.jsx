@@ -6,11 +6,13 @@ const List = () => {
         {id: 4, name: "coconut", calories: 159}, 
         {id: 5, name: "pineapple", calories: 37}
     ].sort((a,b) => b.calories - a.calories)
+
+    const lowCalFruits = fruits.filter(fruits => fruits.calories < 100)
     
-    const listItems = fruits.map(fruit => 
-        <li key={fruit.id}>
-            {fruit.name}: &nbsp;
-            <b>{fruit.calories}</b>
+    const listItems = lowCalFruits.map(lowCalFruit => 
+        <li key={lowCalFruit.id}>
+            {lowCalFruit.name}: &nbsp;
+            <b>{lowCalFruit.calories}</b>
         </li>
     )
 
