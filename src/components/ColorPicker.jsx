@@ -2,9 +2,22 @@ import { useState } from "react"
 
 const ColorPicker = () => {
     const [color, setColor] = useState('#DDD')
+    const [textColor, setTextColor] = useState('black')
+    const isColorLight = (hex) => {
+        const r = parseInt(hex.substr(1, 2), 16)
+        const g = parseInt(hex.substr(3, 2), 16)
+        const b = parseInt(hex.substr(5, 2), 16)
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000
+        return brightness > 128
+    }
+
     const handleColorChange = (event) => {
         setColor(event.target.value)
+        setTextColor(isColorLight(event.target.value) ? 'black' : 'white')
     }
+    
+    
+
     const colorPìckerContainerStyle = {
         display: "flex",
         flexDirection: "column",
@@ -28,9 +41,10 @@ const ColorPicker = () => {
         backgroundColor: color
     }
     const pStyle = {
-        color: "hsl(0, 0%, 20%)",
+        color: textColor,
         fontSize: "2rem",
-        textAlign: "center"
+        textAlign: "center",
+        transition: "0.75s ease"
     }
 
     const labelStyle = {
